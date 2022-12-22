@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 
@@ -29,6 +30,16 @@ public class BoeBotGUI extends Application {
         stage.setTitle("BoeBot GUI");
         stage.setScene(scene);
         stage.show();
+        BoeBotGuiController controller = new BoeBotGuiController();
+//        controller.initialize();
+
+//        ComboBox<String> dropdown = new ComboBox<>();
+//        String controls = "Controls";
+//        String map = "Map";
+//        dropdown.getItems().addAll(controls, map);
+//        dropdown.setValue("Map");
+
+
     }
 
 

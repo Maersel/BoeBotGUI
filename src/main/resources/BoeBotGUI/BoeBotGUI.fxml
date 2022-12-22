@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -44,7 +45,8 @@
                <Font size="16.0" />
             </font>
          </Button>
-         <Button layoutX="454.0" layoutY="14.0" mnemonicParsing="false" onAction="#onButtonClick" text="Button" />
+         <Button layoutX="432.0" layoutY="14.0" mnemonicParsing="false" onAction="#onButtonClick" text="Start bluetooth" />
+         <ComboBox fx:id="modeSelection" layoutX="20.0" layoutY="14.0" prefWidth="150.0" />
       </children>
    </AnchorPane>
    <padding>

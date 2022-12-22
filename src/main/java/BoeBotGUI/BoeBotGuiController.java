@@ -1,7 +1,11 @@
 package BoeBotGUI;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 
@@ -9,6 +13,9 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 public class BoeBotGuiController {
+
+    ObservableList<String> modes = FXCollections.observableArrayList("Map", "Controls");
+
 
     @FXML
     void onBackwardsClick() {
@@ -50,14 +57,16 @@ public class BoeBotGuiController {
         java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
     }
 
-    public void keyPressed(KeyEvent event) {
-        switch (event.getKeyChar()) {
-            case 'W' -> onForwardClick();
-            case 'S' -> onBackwardsClick();
-            default -> {
-            }
-        }
+    @FXML
+    private ComboBox<String> modeSelection;
+
+    @FXML
+    void initialize() {
+
+        modeSelection.setValue("Mode");
+        modeSelection.setItems(modes);
     }
+
 
     public void keyPressed(javafx.scene.input.KeyEvent keyEvent) {
         switch (keyEvent.getCode()) {
