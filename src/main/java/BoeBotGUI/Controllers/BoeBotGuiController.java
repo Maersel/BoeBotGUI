@@ -1,21 +1,30 @@
-package BoeBotGUI;
+package BoeBotGUI.Controllers;
 
+import BoeBotGUI.BoeBotGUI;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
+import javafx.stage.Stage;
+import javafx.stage.Window;
+import BoeBotGUI.sceneSwitcher;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 public class BoeBotGuiController {
 
-    ObservableList<String> modes = FXCollections.observableArrayList("Map", "Controls");
+    Scene scene;
 
+    ObservableList<String> modes = FXCollections.observableArrayList("Map", "Controls");
 
     @FXML
     void onBackwardsClick() {
@@ -58,13 +67,15 @@ public class BoeBotGuiController {
     }
 
     @FXML
-    private ComboBox<String> modeSelection;
-
-    @FXML
     void initialize() {
 
-        modeSelection.setValue("Mode");
-        modeSelection.setItems(modes);
+    }
+
+    @FXML
+    void switchToMap(ActionEvent event) throws IOException {
+        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        sceneSwitcher sceneSwitcher = new sceneSwitcher(stage);
+        sceneSwitcher.switchToMap();
     }
 
 

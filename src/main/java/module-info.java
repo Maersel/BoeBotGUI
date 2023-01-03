@@ -6,4 +6,6 @@ module com.example.boebotgui {
 
     opens BoeBotGUI to javafx.fxml;
     exports BoeBotGUI;
+    exports BoeBotGUI.Controllers;
+    opens BoeBotGUI.Controllers to javafx.fxml;
 }

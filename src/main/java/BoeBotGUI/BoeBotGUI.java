@@ -1,5 +1,6 @@
 package BoeBotGUI;
 
+import BoeBotGUI.Controllers.BoeBotGuiController;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,29 +21,28 @@ import java.util.Scanner;
 
 public class BoeBotGUI extends Application {
 
+    Scene controls;
+    Scene map;
 
-    Scene scene;
+    Stage stage;
+
+    BoeBotGuiController controller;
+
+    sceneSwitcher sceneSwitcher;
 
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(BoeBotGUI.class.getResource("BoeBotGUI.fxml"));
-        scene = new Scene(fxmlLoader.load(), 960, 540);
-        stage.setTitle("BoeBot GUI");
-        stage.setScene(scene);
+        this.stage = stage;
+        controller = new BoeBotGuiController();
+
+        stage.setResizable(false);
+
+        sceneSwitcher = new sceneSwitcher(stage);
+
+        sceneSwitcher.switchToControls();
         stage.show();
-        BoeBotGuiController controller = new BoeBotGuiController();
-//        controller.initialize();
-
-//        ComboBox<String> dropdown = new ComboBox<>();
-//        String controls = "Controls";
-//        String map = "Map";
-//        dropdown.getItems().addAll(controls, map);
-//        dropdown.setValue("Map");
-
 
     }
-
-
 
     public static void main(String[] args) {
         launch();
