@@ -13,24 +13,24 @@
             <Image url="@images/routeboard.png" />
          </image>
       </ImageView>
-      <Button layoutX="297.0" layoutY="40.0" mnemonicParsing="false" onAction="#onButton1" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="434.0" layoutY="20.0" mnemonicParsing="false" onAction="#onButton2" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="615.0" layoutY="20.0" mnemonicParsing="false" onAction="#onButton3" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="790.0" layoutY="141.0" mnemonicParsing="false" onAction="#onButton9" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="790.0" layoutY="239.0" mnemonicParsing="false" onAction="#onButton14" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="575.0" layoutY="239.0" mnemonicParsing="false" onAction="#onButton13" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="434.0" layoutY="199.0" mnemonicParsing="false" onAction="#onButton12" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="655.0" layoutY="363.0" mnemonicParsing="false" onAction="#onButton16" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="655.0" layoutY="468.0" mnemonicParsing="false" onAction="#onButton18" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="236.0" layoutY="468.0" mnemonicParsing="false" onAction="#onButton17" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="317.0" layoutY="219.0" mnemonicParsing="false" onAction="#onButton11" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="230.0" layoutY="135.0" mnemonicParsing="false" onAction="#onButton5" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="124.0" layoutY="135.0" mnemonicParsing="false" onAction="#onButton4" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="124.0" layoutY="219.0" mnemonicParsing="false" onAction="#onButton10" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="236.0" layoutY="377.0" mnemonicParsing="false" onAction="#onButton15" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="682.0" layoutY="141.0" mnemonicParsing="false" onAction="#onButton8" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="615.0" layoutY="115.0" mnemonicParsing="false" onAction="#onButton7" prefHeight="40.0" prefWidth="40.0" />
-      <Button layoutX="297.0" layoutY="115.0" mnemonicParsing="false" onAction="#onButton6" prefHeight="40.0" prefWidth="40.0" />
+      <Button layoutX="297.0" layoutY="40.0" mnemonicParsing="false" onAction="#onButton1" prefHeight="40.0" prefWidth="40.0" text="1" />
+      <Button layoutX="434.0" layoutY="20.0" mnemonicParsing="false" onAction="#onButton2" prefHeight="40.0" prefWidth="40.0" text="2" />
+      <Button layoutX="615.0" layoutY="20.0" mnemonicParsing="false" onAction="#onButton3" prefHeight="40.0" prefWidth="40.0" text="3" />
+      <Button layoutX="790.0" layoutY="141.0" mnemonicParsing="false" onAction="#onButton9" prefHeight="40.0" prefWidth="40.0" text="9" />
+      <Button layoutX="790.0" layoutY="239.0" mnemonicParsing="false" onAction="#onButton14" prefHeight="40.0" prefWidth="40.0" text="15" />
+      <Button layoutX="575.0" layoutY="239.0" mnemonicParsing="false" onAction="#onButton13" prefHeight="40.0" prefWidth="40.0" text="14" />
+      <Button layoutX="434.0" layoutY="199.0" mnemonicParsing="false" onAction="#onButton12" prefHeight="40.0" prefWidth="40.0" text="13" />
+      <Button layoutX="655.0" layoutY="363.0" mnemonicParsing="false" onAction="#onButton19" prefHeight="40.0" prefWidth="40.0" text="19" />
+      <Button layoutX="655.0" layoutY="468.0" mnemonicParsing="false" onAction="#onButton21" prefHeight="40.0" prefWidth="40.0" text="21" />
+      <Button layoutX="236.0" layoutY="468.0" mnemonicParsing="false" onAction="#onButton20" prefHeight="40.0" prefWidth="40.0" text="20" />
+      <Button layoutX="317.0" layoutY="219.0" mnemonicParsing="false" onAction="#onButton11" prefHeight="40.0" prefWidth="40.0" text="12" />
+      <Button layoutX="230.0" layoutY="135.0" mnemonicParsing="false" onAction="#onButton5" prefHeight="40.0" prefWidth="40.0" text="5" />
+      <Button layoutX="124.0" layoutY="135.0" mnemonicParsing="false" onAction="#onButton4" prefHeight="40.0" prefWidth="40.0" text="4" />
+      <Button layoutX="124.0" layoutY="219.0" mnemonicParsing="false" onAction="#onButton10" prefHeight="40.0" prefWidth="40.0" text="10" />
+      <Button layoutX="236.0" layoutY="377.0" mnemonicParsing="false" onAction="#onButton18" prefHeight="40.0" prefWidth="40.0" text="18" />
+      <Button layoutX="682.0" layoutY="141.0" mnemonicParsing="false" onAction="#onButton8" prefHeight="40.0" prefWidth="40.0" text="8" />
+      <Button layoutX="615.0" layoutY="115.0" mnemonicParsing="false" onAction="#onButton7" prefHeight="40.0" prefWidth="40.0" text="7" />
+      <Button layoutX="297.0" layoutY="115.0" mnemonicParsing="false" onAction="#onButton6" prefHeight="40.0" prefWidth="40.0" text="6" />
       <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToControls" text="Switch to controls" />
       <Button layoutX="8.0" layoutY="508.0" mnemonicParsing="false" onAction="#placeGoatFeed" text="Place goat feed" />
       <Button layoutX="8.0" layoutY="476.0" mnemonicParsing="false" onAction="#placeStartingPoint" text="Place starting point" />
@@ -38,5 +38,8 @@
       <Circle fill="RED" layoutX="124.0" layoutY="521.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="startingPoint" fill="YELLOW" layoutX="144.0" layoutY="488.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="goatFeed" fill="RED" layoutX="124.0" layoutY="521.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Button layoutX="394.0" layoutY="301.0" mnemonicParsing="false" onAction="#onButton16" prefHeight="40.0" prefWidth="40.0" text="16" />
+      <Button layoutX="440.0" layoutY="331.0" mnemonicParsing="false" onAction="#onButton17" prefHeight="40.0" prefWidth="40.0" text="17" />
+      <Button layoutX="895.0" layoutY="509.0" mnemonicParsing="false" onAction="#onConfirmButton" text="Confirm" />
    </children>
 </AnchorPane>

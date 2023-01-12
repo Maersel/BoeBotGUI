@@ -111,47 +111,12 @@ public class MapController {
     }
 
     @FXML
+    void onConfirmButton(ActionEvent event) {
+
+    }
+
+    @FXML
     void onButton1(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onButton10(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onButton11(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onButton12(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onButton13(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onButton14(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onButton15(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onButton16(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onButton17(ActionEvent event) {
 
     }
 
@@ -196,6 +161,62 @@ public class MapController {
     }
 
     @FXML
+    void onButton10(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton11(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton12(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton13(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton14(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton15(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton16(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton17(ActionEvent event) {
+
+    }
+
+    @FXML
     void onButton18(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton19(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton20(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onButton21(ActionEvent event) {
+
     }
 }
