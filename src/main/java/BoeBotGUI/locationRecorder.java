@@ -26,6 +26,10 @@ public class locationRecorder {
         selectedDropOffPoint = dropOff;
     }
 
+    public int getDropOff() {
+        return selectedDropOffPoint;
+    }
+
     public int getGoatFeedXCoord() {
         return goatFeedXCoord;
     }
