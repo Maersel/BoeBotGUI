@@ -27,6 +27,11 @@ public class BoeBotGuiController {
     ObservableList<String> modes = FXCollections.observableArrayList("Map", "Controls");
 
     @FXML
+    void initialize() {
+
+    }
+
+    @FXML
     void onBackwardsClick() {
         System.out.println("backwards");
     }
@@ -64,11 +69,6 @@ public class BoeBotGuiController {
     @FXML
     void onButtonClick() throws IOException {
         java.awt.Desktop.getDesktop().browse(java.net.URI.create("https://www.youtube.com/watch?v=dQw4w9WgXcQ"));
-    }
-
-    @FXML
-    void initialize() {
-
     }
 
     @FXML

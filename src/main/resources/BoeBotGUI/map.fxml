@@ -4,10 +4,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 
-<AnchorPane prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #695E93;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BoeBotGUI.Controllers.MapController">
+<AnchorPane onMouseClicked="#onMouseClicked" prefHeight="540.0" prefWidth="960.0" style="-fx-background-color: #695E93;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BoeBotGUI.Controllers.MapController">
    <children>
-      <ImageView fitHeight="485.0" fitWidth="700.0" layoutX="130.0" layoutY="32.0" preserveRatio="true">
+      <ImageView fx:id="mapImage" fitHeight="485.0" fitWidth="700.0" layoutX="130.0" layoutY="32.0" onMouseClicked="#onMouseClicked" preserveRatio="true">
          <image>
             <Image url="@images/routeboard.png" />
          </image>
@@ -31,5 +32,11 @@
       <Button layoutX="615.0" layoutY="115.0" mnemonicParsing="false" onAction="#onButton7" prefHeight="40.0" prefWidth="40.0" />
       <Button layoutX="297.0" layoutY="115.0" mnemonicParsing="false" onAction="#onButton6" prefHeight="40.0" prefWidth="40.0" />
       <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToControls" text="Switch to controls" />
+      <Button layoutX="8.0" layoutY="508.0" mnemonicParsing="false" onAction="#placeGoatFeed" text="Place goat feed" />
+      <Button layoutX="8.0" layoutY="476.0" mnemonicParsing="false" onAction="#placeStartingPoint" text="Place starting point" />
+      <Circle fill="YELLOW" layoutX="144.0" layoutY="488.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="RED" layoutX="124.0" layoutY="521.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="startingPoint" fill="YELLOW" layoutX="144.0" layoutY="488.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="goatFeed" fill="RED" layoutX="124.0" layoutY="521.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

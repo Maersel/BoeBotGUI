@@ -39,7 +39,7 @@ public class BoeBotGUI extends Application {
 
         sceneSwitcher = new sceneSwitcher(stage);
 
-        sceneSwitcher.switchToControls();
+        sceneSwitcher.switchToMap();
         stage.show();
 
     }
