@@ -2,6 +2,7 @@ module com.example.boebotgui {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
+    requires jssc;
 
 
     opens BoeBotGUI to javafx.fxml;

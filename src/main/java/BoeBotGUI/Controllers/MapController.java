@@ -1,7 +1,7 @@
 package BoeBotGUI.Controllers;
 
 import BoeBotGUI.BoeBotController;
-import BoeBotGUI.locationRecorder;
+//import BoeBotGUI.locationRecorder;
 import BoeBotGUI.sceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,27 +10,32 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class MapController {
 
-    private locationRecorder location;
+    //    private locationRecorder location;
     private BoeBotController boeBotController;
 
-    private boolean placeGoatFeedClicked = false;
+    private boolean placeGoatFeedPlaceClicked = false;
     private boolean placeStartingPointClicked = false;
+    private boolean placeGoatFeedPickupClicked = false;
 
-    private boolean dropOffSelected = false;
-    private int dropOffNumber;
+    private int intGoatFeed;
+    private int intGoatFeedMode;
+    private int intStartingPoint = 15;
+
+    private int buttonsRemoveGoatFeed = 1;
+    private int buttonsRemoveStartingPoint = 16;
+
+    private boolean goatFeedPointSelected = false;
+    private boolean startingPointSelected = true;
 
     @FXML
     private Circle goatFeed;
@@ -39,10 +44,10 @@ public class MapController {
     @FXML
     private ImageView mapImage;
 
-
     @FXML
     void initialize() {
-        location = new locationRecorder();
+        button16.setStyle("-fx-background-color: #00ff00");
+//        location = new locationRecorder();
         boeBotController = new BoeBotController();
         boeBotController.startBluetooth();
     }
@@ -55,83 +60,75 @@ public class MapController {
     }
 
     public void onMouseClicked(javafx.scene.input.MouseEvent event) {
-        if (placeGoatFeedClicked) {
-            location.setGoatFeedCoords(event.getSceneX() + 10, event.getSceneY() + 10);
-            //move goat feed circle into selected position
-            this.goatFeed.setLayoutX((int)event.getSceneX() + 10);
-            this.goatFeed.setLayoutY((int)event.getSceneY() + 10);
-            goatFeed.setOpacity(100);
-            //setting cursor to default
-            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-            Scene scene = stage.getScene();
-            scene.setCursor(Cursor.DEFAULT);
-            //debug
-//            System.out.println("Goat feed placed at (" + (int)event.getSceneX() + 10 + ", " + (int)event.getSceneY() + 10 + ")");
-//            System.out.println("Actual location: " + goatFeed.getLayoutX() + ", " + goatFeed.getLayoutY());
-
-            placeGoatFeedClicked = false;
-        }
-        if (placeStartingPointClicked) {
-            location.setStartingPointCoords(event.getSceneX() + 10, event.getSceneY() + 10);
-            //move starting point circle into selected position
-            this.startingPoint.setLayoutX((int)event.getSceneX() + 10);
-            this.startingPoint.setLayoutY((int)event.getSceneY() + 10);
-            startingPoint.setOpacity(100);
-            //setting cursor to default
-            Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-            Scene scene = stage.getScene();
-            scene.setCursor(Cursor.DEFAULT);
-            //debug
-//            System.out.println("Starting point placed at (" + (int)event.getSceneX() + 10 + ", " + (int)event.getSceneY() + 10 + ")");
-
-            placeStartingPointClicked = false;
-        }
-    }
-
-    @FXML
-    void placeGoatFeed(ActionEvent event) {
-        placeStartingPointClicked = false;
-        placeGoatFeedClicked = true;
-        //setting cursor to circle
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        Scene scene = stage.getScene();
-        SnapshotParameters sp = new SnapshotParameters();
-        sp.setFill(Color.TRANSPARENT);
-        Image image = goatFeed.snapshot(sp, null);
-        scene.setCursor(new ImageCursor(image));
-
-        goatFeed.setOpacity(0);
-        //debug
-//        System.out.println("Goat feed selected");
+//        if (placeGoatFeedClicked) {
+//            location.setGoatFeedCoords(event.getSceneX() + 10, event.getSceneY() + 10);
+//            //move goat feed circle into selected position
+//            this.goatFeed.setLayoutX((int) event.getSceneX() + 10);
+//            this.goatFeed.setLayoutY((int) event.getSceneY() + 10);
+//            goatFeed.setOpacity(100);
+//            //setting cursor to default
+//            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            Scene scene = stage.getScene();
+//            scene.setCursor(Cursor.DEFAULT);
+//            //debug
+////            System.out.println("Goat feed placed at (" + (int)event.getSceneX() + 10 + ", " + (int)event.getSceneY() + 10 + ")");
+////            System.out.println("Actual location: " + goatFeed.getLayoutX() + ", " + goatFeed.getLayoutY());
+//
+//            placeGoatFeedClicked = false;
+//        }
+//        if (placeStartingPointClicked) {
+//            location.setStartingPointCoords(event.getSceneX() + 10, event.getSceneY() + 10);
+//            //move starting point circle into selected position
+//            this.startingPoint.setLayoutX((int) event.getSceneX() + 10);
+//            this.startingPoint.setLayoutY((int) event.getSceneY() + 10);
+//            startingPoint.setOpacity(100);
+//            //setting cursor to default
+//            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            Scene scene = stage.getScene();
+//            scene.setCursor(Cursor.DEFAULT);
+//            //debug
+////            System.out.println("Starting point placed at (" + (int)event.getSceneX() + 10 + ", " + (int)event.getSceneY() + 10 + ")");
+//
+//            placeStartingPointClicked = false;
+//        }
     }
 
     @FXML
     void placeStartingPoint(ActionEvent event) {
-        placeGoatFeedClicked = false;
         placeStartingPointClicked = true;
-        //setting cursor to circle
-        Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
-        Scene scene = stage.getScene();
-        SnapshotParameters sp = new SnapshotParameters();
-        sp.setFill(Color.TRANSPARENT);
-        Image image = startingPoint.snapshot(sp, null);
-        scene.setCursor(new ImageCursor(image));
+        placeGoatFeedPickupClicked = false;
+        placeGoatFeedPlaceClicked = false;
+        selectButtonPress(placeStartingPoint);
+    }
 
-        startingPoint.setOpacity(0);
-//        System.out.println("Starting point selected");
+    @FXML
+    void placeGoatFeedPickup(ActionEvent event) {
+        placeStartingPointClicked = false;
+        placeGoatFeedPickupClicked = true;
+        placeGoatFeedPlaceClicked = false;
+        selectButtonPress(placeGoatFeedPickup);
+    }
+
+    @FXML
+    void placeGoatFeedPlace(ActionEvent event) {
+        placeStartingPointClicked = false;
+        placeGoatFeedPickupClicked = false;
+        placeGoatFeedPlaceClicked = true;
+        selectButtonPress(placeGoatFeedPlace);
     }
 
     @FXML
     void onConfirmButton(ActionEvent event) {
-        if (goatFeed.getLayoutX() != 124 && goatFeed.getLayoutY() != 521 &&
-                startingPoint.getLayoutX() != 144 && startingPoint.getLayoutY() != 488 && dropOffSelected) {
+        if (goatFeedPointSelected && startingPointSelected && intStartingPoint != intGoatFeed) {
             Alert confirm = new Alert(AlertType.CONFIRMATION);
             confirm.setTitle("confirm");
             confirm.setContentText("Confirm selected locations?");
             Optional<ButtonType> choice = confirm.showAndWait();
             if (choice.get() == ButtonType.OK) {
-                location.setDropOff(dropOffNumber);
-                boeBotController.followRoute();
+//                location.setDropOff(dropOffNumber);
+                boeBotController.sendRoute(intStartingPoint, intGoatFeed, intGoatFeedMode);
+
+                System.out.println("startingPoint n" + intStartingPoint + " | p" + buttonsRemoveStartingPoint + "\t\t" + "goatFeed n" + intGoatFeed + " | p" + buttonsRemoveGoatFeed + " || m" + intGoatFeedMode);
             }
         } else {
             Alert error = new Alert(AlertType.ERROR);
@@ -144,164 +141,133 @@ public class MapController {
         }
     }
 
+    private void buttonPress(Button button, int boeBotInt, int buttonInt) {
+        unselectAllOtherDropOffButtons();
+        if (placeStartingPointClicked) {
+            intStartingPoint = boeBotInt;
+            buttonsRemoveStartingPoint = buttonInt;
+            startingPointSelected = true;
+            button.setStyle("-fx-background-color: #00ff00");
+        }
+        if (placeGoatFeedPlaceClicked) {
+            intGoatFeed = boeBotInt;
+            intGoatFeedMode = 41;
+            buttonsRemoveGoatFeed = buttonInt;
+            goatFeedPointSelected = true;
+            button.setStyle("-fx-background-color: #ff7a00");
+        }
+        if (placeGoatFeedPickupClicked) {
+            intGoatFeed = boeBotInt;
+            intGoatFeedMode = 42;
+            buttonsRemoveGoatFeed = buttonInt;
+            goatFeedPointSelected = true;
+            button.setStyle("-fx-background-color: #ff0000");
+        }
+    }
+
+    private void selectButtonPress(Button button) {
+        unselectOtherSelectButtons();
+        button.setStyle("-fx-background-color: #a5a5a5");
+    }
+
     @FXML
     void onButton1(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 1;
-        unselectAllDropOffButtons();
-        button1.setStyle("-fx-background-color: green");
+        buttonPress(button1, 26, 1);
     }
 
     @FXML
     void onButton2(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 2;
-        unselectAllDropOffButtons();
-        button2.setStyle("-fx-background-color: green");
+        buttonPress(button2, 18, 2);
     }
 
     @FXML
     void onButton3(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 3;
-        unselectAllDropOffButtons();
-        button3.setStyle("-fx-background-color: green");
+        buttonPress(button3, 19, 3);
     }
 
     @FXML
     void onButton4(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 4;
-        unselectAllDropOffButtons();
-        button4.setStyle("-fx-background-color: green");
+        buttonPress(button4, 25, 4);
     }
 
     @FXML
     void onButton5(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 5;
-        unselectAllDropOffButtons();
-        button5.setStyle("-fx-background-color: green");
+        buttonPress(button5, 31, 5);
     }
 
     @FXML
     void onButton6(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 6;
-        unselectAllDropOffButtons();
-        button6.setStyle("-fx-background-color: green");
+        buttonPress(button6, 32, 6);
     }
 
     @FXML
     void onButton7(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 7;
-        unselectAllDropOffButtons();
-        button7.setStyle("-fx-background-color: green");
+        buttonPress(button7, 27, 7);
     }
 
     @FXML
     void onButton8(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 8;
-        unselectAllDropOffButtons();
-        button8.setStyle("-fx-background-color: green");
+        buttonPress(button8, 28, 8);
     }
 
     @FXML
     void onButton9(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 9;
-        unselectAllDropOffButtons();
-        button9.setStyle("-fx-background-color: green");
+        buttonPress(button9, 20, 9);
     }
 
     @FXML
     void onButton10(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 10;
-        unselectAllDropOffButtons();
-        button10.setStyle("-fx-background-color: green");
+        buttonPress(button10, 24, 10);
     }
 
     @FXML
     void onButton11(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 11;
-        unselectAllDropOffButtons();
-        button11.setStyle("-fx-background-color: green");
+        buttonPress(button11, 17, 11);
     }
 
     @FXML
     void onButton12(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 12;
-        unselectAllDropOffButtons();
-        button12.setStyle("-fx-background-color: green");
+        buttonPress(button12, 13, 12);
     }
 
     @FXML
     void onButton13(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 13;
-        unselectAllDropOffButtons();
-        button13.setStyle("-fx-background-color: green");
+        buttonPress(button13, 14, 13);
     }
 
     @FXML
     void onButton14(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 14;
-        unselectAllDropOffButtons();
-        button14.setStyle("-fx-background-color: green");
+        buttonPress(button14, 21, 14);
     }
 
     @FXML
     void onButton15(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 15;
-        unselectAllDropOffButtons();
-        button15.setStyle("-fx-background-color: green");
+        buttonPress(button15, 16, 15);
     }
 
     @FXML
     void onButton16(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 16;
-        unselectAllDropOffButtons();
-        button16.setStyle("-fx-background-color: green");
+        buttonPress(button16, 15, 16);
     }
 
     @FXML
     void onButton17(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 17;
-        unselectAllDropOffButtons();
-        button17.setStyle("-fx-background-color: green");
+        buttonPress(button17, 30, 17);
     }
 
     @FXML
     void onButton18(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 18;
-        unselectAllDropOffButtons();
-        button18.setStyle("-fx-background-color: green");
+        buttonPress(button18, 29, 18);
     }
 
     @FXML
     void onButton19(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 19;
-        unselectAllDropOffButtons();
-        button19.setStyle("-fx-background-color: green");
+        buttonPress(button19, 23, 19);
     }
 
     @FXML
     void onButton20(ActionEvent event) {
-        dropOffSelected = true;
-        dropOffNumber = 20;
-        unselectAllDropOffButtons();
-        button20.setStyle("-fx-background-color: green");
+        buttonPress(button20, 22, 20);
     }
 
     @FXML
@@ -345,28 +311,63 @@ public class MapController {
     @FXML
     private Button button20;
 
-    private void unselectAllDropOffButtons() {
-        button1.setStyle("");
-        button2.setStyle("");
-        button3.setStyle("");
-        button4.setStyle("");
-        button5.setStyle("");
-        button6.setStyle("");
-        button7.setStyle("");
-        button8.setStyle("");
-        button9.setStyle("");
-        button10.setStyle("");
-        button11.setStyle("");
-        button12.setStyle("");
-        button13.setStyle("");
-        button14.setStyle("");
-        button15.setStyle("");
-        button16.setStyle("");
-        button17.setStyle("");
-        button18.setStyle("");
-        button19.setStyle("");
-        button19.setStyle("");
-        button20.setStyle("");
+    private ArrayList<Button> buttons;
+
+    private void unselectAllOtherDropOffButtons() {
+        this.buttons = new ArrayList<>();
+
+        buttons.add(button1);
+        buttons.add(button2);
+        buttons.add(button3);
+        buttons.add(button4);
+        buttons.add(button5);
+        buttons.add(button6);
+        buttons.add(button7);
+        buttons.add(button8);
+        buttons.add(button9);
+        buttons.add(button10);
+        buttons.add(button11);
+        buttons.add(button12);
+        buttons.add(button13);
+        buttons.add(button14);
+        buttons.add(button15);
+        buttons.add(button16);
+        buttons.add(button17);
+        buttons.add(button18);
+        buttons.add(button19);
+        buttons.add(button20);
+
+        if (placeGoatFeedPlaceClicked || placeGoatFeedPickupClicked) {
+            buttons.remove(buttonsRemoveStartingPoint - 1);
+        }
+        if (placeStartingPointClicked) {
+            buttons.remove(buttonsRemoveGoatFeed - 1);
+        }
+        for (Button button : buttons) {
+            button.setStyle("");
+        }
     }
+
+    @FXML
+    private Button placeStartingPoint;
+    @FXML
+    private Button placeGoatFeedPickup;
+    @FXML
+    private Button placeGoatFeedPlace;
+
+    private ArrayList<Button> selectButtons;
+
+    private void unselectOtherSelectButtons() {
+        this.selectButtons = new ArrayList<>();
+
+        selectButtons.add(placeStartingPoint);
+        selectButtons.add(placeGoatFeedPickup);
+        selectButtons.add(placeGoatFeedPlace);
+
+        for (Button selectButton : selectButtons) {
+            selectButton.setStyle("");
+        }
+    }
+
 
 }

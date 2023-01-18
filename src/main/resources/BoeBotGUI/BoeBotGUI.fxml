@@ -5,7 +5,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane onKeyPressed="#keyPressed" prefHeight="540" prefWidth="960" style="-fx-background-color: #695E93;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BoeBotGUI.Controllers.BoeBotGuiController">
+<AnchorPane onKeyPressed="#keyPressed" prefHeight="540" prefWidth="960" style="-fx-background-color: #695e93;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BoeBotGUI.Controllers.BoeBotGuiController">
    <children>
       <Button layoutX="220.0" layoutY="266.0" mnemonicParsing="false" onAction="#onBackwardsClick" prefHeight="100.0" prefWidth="100.0" text="Backwards">
          <font>
