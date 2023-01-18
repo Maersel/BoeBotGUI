@@ -31,7 +31,7 @@
       <Button fx:id="button8" layoutX="682.0" layoutY="141.0" mnemonicParsing="false" onAction="#onButton8" prefHeight="40.0" prefWidth="40.0" text="8" />
       <Button fx:id="button7" layoutX="615.0" layoutY="115.0" mnemonicParsing="false" onAction="#onButton7" prefHeight="40.0" prefWidth="40.0" text="7" />
       <Button fx:id="button6" layoutX="297.0" layoutY="115.0" mnemonicParsing="false" onAction="#onButton6" prefHeight="40.0" prefWidth="40.0" text="6" />
-      <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToControls" text="Switch to controls" />
+<!--      <Button layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#switchToControls" text="Switch to controls" />-->
       <Button fx:id="placeStartingPoint" layoutX="32.0" layoutY="444.0" mnemonicParsing="false" onAction="#placeStartingPoint" text="Set starting point" />
       <Button fx:id="placeGoatFeedPlace" layoutX="32.0" layoutY="476.0" mnemonicParsing="false" onAction="#placeGoatFeedPlace" text="Set feeding bucket pickup" />
       <Button fx:id="placeGoatFeedPickup" layoutX="32.0" layoutY="508.0" mnemonicParsing="false" onAction="#placeGoatFeedPickup" text="Set feeding bucket place" />

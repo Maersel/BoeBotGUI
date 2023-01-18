@@ -57,6 +57,8 @@ public class MapController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         sceneSwitcher sceneSwitcher = new sceneSwitcher(stage);
         sceneSwitcher.switchToControls();
+
+
     }
 
     public void onMouseClicked(javafx.scene.input.MouseEvent event) {

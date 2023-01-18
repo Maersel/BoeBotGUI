@@ -30,6 +30,7 @@ public class BoeBotGUI extends Application {
     Stage stage;
 
     BoeBotGuiController controller;
+    BoeBotController boeBotController;
 
     sceneSwitcher sceneSwitcher;
 

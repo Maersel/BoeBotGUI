@@ -3,6 +3,7 @@ package BoeBotGUI;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import jssc.SerialPortException;
 
 import java.io.IOException;
 
@@ -11,6 +12,8 @@ public class sceneSwitcher {
     Stage stage;
     Scene controls;
     Scene map;
+
+    private BoeBotController boeBotController;
 
     public sceneSwitcher(Stage stage) {
         this.stage = stage;

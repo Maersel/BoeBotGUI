@@ -5,18 +5,21 @@ import jssc.SerialPortException;
 
 public class BoeBotController {
 
-//    private locationRecorder locationRecorder;
+    //    private locationRecorder locationRecorder;
     private boolean bluetoothStarted = false;
+
 
     public BoeBotController() {
 //        this.locationRecorder = new locationRecorder();
+
+//        this.serialPort= new SerialPort("COM7");
     }
 
-    private SerialPort serialPort = new SerialPort("COM11");
-//    private SerialPort serialPort = new SerialPort("COM7");
+
+    SerialPort serialPort = new SerialPort("COM11");
 
     public void startBluetooth() {
-        if(!bluetoothStarted) {
+        if (!bluetoothStarted) {
             try {
                 serialPort.openPort(); // Open the serial connection
                 serialPort.setParams(SerialPort.BAUDRATE_115200,
